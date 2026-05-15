@@ -2,11 +2,16 @@
 import "../styles/global.css";
 import MainLayout from "@/layout/MainLayout.astro";
 import HeroSection from "@/components/HeroSection.astro";
+import AboutMe from "@/components/AboutMe.astro";
 import NavBar from "@/components/NavBar.astro";
+import Tech from "@/components/Tech.astro";
 ---
 
 <MainLayout>
-  <section class="max-w-7xl bg-orange-500 mx-auto">
+  <section class="max-w-7xl mx-auto">
+    <NavBar />
     <HeroSection />
+    <AboutMe />
+    <Tech/>
   </section>
 </MainLayout>

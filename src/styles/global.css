@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource-variable/noto-sans";
-@import "@fontsource-variable/playfair-display";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -76,8 +74,7 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-Inder), sans-serif;
-  --font-heading: var(--font-Elanor), serif;
+  --font-sans: var(--font-Inter), sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -123,14 +120,14 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-white;
   }
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
   html {
-    @apply font-sans font-semibold text-lg;
+    @apply font-sans font-medium font-stretch-expanded tracking-normal text-lg;
   }
 
   nav {
@@ -138,6 +135,6 @@
   }
 
   h1 {
-    @apply text-7xl font-heading;
+    @apply text-7xl/14 p-2 font-black tracking-tighter;
   }
 }
