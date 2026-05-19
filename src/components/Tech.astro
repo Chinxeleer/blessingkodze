@@ -1,7 +1,32 @@
 ---
+import { Badge } from "./ui/badge";
 
+const stack = [
+  "TypeScript",
+  "Rust",
+  "Python",
+  "Astro",
+  "Tanstack Start",
+  "Tailwindcss v4",
+  "Docker",
+  "GSAP",
+  "Better Auth",
+  "ExpressJs",
+  "Drizzle ORM",
+];
 ---
 
-<section>
-  <h2>Tech Stack</h2>
+<section class="lg:h-96">
+  <h2>Technical Stack</h2>
+  <div class="h-full w-full">
+    <ul class="flex gap-4">
+      {
+        stack.map((tech) => (
+          <li>
+            <Badge className="">{tech}</Badge>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </section>
