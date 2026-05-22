@@ -1,0 +1,53 @@
+---
+import { ArrowUpRight } from "@lucide/astro";
+
+const currentYear = new Date().getFullYear();
+
+const socials = [
+  { label: "GitHub", href: "https://github.com/blessingkodze" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/blessingkodze" },
+  { label: "X / Twitter", href: "https://x.com/blessingkodze" },
+];
+---
+
+<footer class="py-12 md:py-16 mt-12">
+  <!-- Accent divider -->
+  <div class="accent-line w-full mb-10" data-animate="fade-up"></div>
+
+  <div
+    class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+    data-animate="fade-up"
+  >
+    <!-- Left: copyright -->
+    <div>
+      <p class="text-sm text-muted-foreground">
+        &copy; {currentYear} Blessing Kodze. All rights reserved.
+      </p>
+      <a
+        href="mailto:blessingeleer@gmail.com"
+        class="text-sm text-muted-foreground hover:text-foreground transition-colors mt-1 inline-block"
+      >
+        blessingeleer@gmail.com
+      </a>
+    </div>
+
+    <!-- Right: social links -->
+    <ul class="flex gap-6">
+      {
+        socials.map((s) => (
+          <li>
+            <a
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="nav-link inline-flex items-center gap-1"
+            >
+              {s.label}
+              <ArrowUpRight class="size-3.5 opacity-50" />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</footer>

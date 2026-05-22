@@ -1,70 +1,93 @@
 ---
 import profile from "../assets/images/profile.png";
 import { Image } from "astro:assets";
-import { Card, CardHeader, CardContent } from "./ui/card";
 ---
 
-<section class="min-h-screen py-8">
-  <h1 class="mb-20">About Me</h1>
-  <div class="flex w-full gap-6 h-150 items-center justify-center">
-    <div class="flex-1 w-full bg-black rounded-lg pt-4">
+<section id="about" class="py-20 md:py-32">
+  <h2 class="mb-16 md:mb-24" data-animate="fade-up">About Me</h2>
+
+  <!-- Profile + Bio -->
+  <div class="flex flex-col lg:flex-row w-full gap-8 lg:gap-12 items-stretch">
+    <!-- Image -->
+    <div
+      class="flex-1 w-full bg-card rounded-xl overflow-hidden pt-4"
+      data-animate="slide-left"
+    >
       <Image
-        class="w-120 h-170 object-cover mx-auto"
+        class="w-full max-w-md lg:max-w-none h-auto max-h-[600px] object-cover object-top mx-auto"
         src={profile}
-        alt="profile picture"
+        alt="Blessing Kodze — Software Engineer & Founder"
+        width={600}
       />
     </div>
-    <div class="flex-1 text-white flex-col p-6">
-      <h2 class="text-5xl font-semibold text-end md:my-18">
+
+    <!-- Bio text -->
+    <div
+      class="flex-1 flex flex-col justify-center py-4 lg:py-8"
+      data-animate="slide-right"
+    >
+      <h3 class="text-3xl md:text-5xl font-semibold text-end md:mb-10 font-heading leading-snug text-foreground/80">
         Engineer by training.<br />
-        <span class="italic">Founder by conviction.</span>
+        <span class="italic text-foreground">Founder by conviction.</span>
         <br />Builder for Africa.
-      </h2>
-      <p class="text-start">
-        I'm Blessing Kodze a software engineer and founder from Johannesburg,
-        South Africa.<br /><br /> I hold a Computer Science Honours degree from the
-        University of the Witwatersrand (2025), where I spent a year deep in research
-        comparing Mamba state-space models against leading transformer architectures
-        for financial forecasting across 8 datasets, including South African emerging
-        market data. Mamba won 87.5% of the time. That kind of rigour is what I bring
-        to everything I build.<br /><br /> I don't just write code I engineer products.
-        From pixel-precise animated frontends to full stack SaaS systems to AI pipelines,
-        I work across the stack with the same standard throughout. I care about performance,
-        design, and outcomes not just shipping
+      </h3>
+      <p class="text-sm md:text-base text-muted-foreground mt-6 leading-relaxed">
+        I'm Blessing Kodze — a software engineer and founder from Johannesburg,
+        South Africa.
+        <br /><br />
+        I hold a Computer Science Honours degree from the University of the
+        Witwatersrand (2025), where I spent a year deep in research comparing
+        Mamba state-space models against leading transformer architectures for
+        financial forecasting across 8 datasets, including South African emerging
+        market data. Mamba won 87.5% of the time. That kind of rigour is what I
+        bring to everything I build.
+        <br /><br />
+        I don't just write code — I engineer products. From pixel-precise animated
+        frontends to full stack SaaS systems to AI pipelines, I work across the
+        stack with the same standard throughout. I care about performance, design,
+        and outcomes — not just shipping.
       </p>
     </div>
   </div>
-  <div class="w-full flex gap-4 md:mt-20 justify-around items-center">
-    <Card className="w-full md:max-w-lg">
-      <CardHeader className="text-2xl font-semibold">dossier</CardHeader>
-      <CardContent>
-        <p>
-          Founder of dossier, a FICA compliance platform for South African legal
-          practitioners — built on a multi-tenant SaaS architecture with a
-          RAG-based AI pipeline using LangChain, ChromaDB, and FastAPI.
-        </p>
-      </CardContent>
-    </Card><Card className="w-full md:max-w-lg">
-      <CardHeader className="text-2xl font-semibold">bleko</CardHeader>
-      <CardContent>
-        <p>
-          Founder of bleko, a web design and digital systems agency helping
-          South African SMEs get serious about their digital presence, beyond
-          templates, into real infrastructure.
-        </p>
-      </CardContent>
-    </Card>
+
+  <!-- Project cards -->
+  <div
+    class="w-full flex flex-col md:flex-row gap-6 mt-16 md:mt-24"
+    data-animate="stagger"
+  >
+    <div
+      class="flex-1 rounded-xl border border-border bg-card p-6 md:p-8 transition-all duration-300 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5"
+      data-stagger-item
+    >
+      <h4 class="text-xl font-semibold font-heading mb-3">dossier</h4>
+      <p class="text-sm text-muted-foreground leading-relaxed">
+        Founder of dossier, a FICA compliance platform for South African legal
+        practitioners — built on a multi-tenant SaaS architecture with a
+        RAG-based AI pipeline using LangChain, ChromaDB, and FastAPI.
+      </p>
+    </div>
+    <div
+      class="flex-1 rounded-xl border border-border bg-card p-6 md:p-8 transition-all duration-300 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5"
+      data-stagger-item
+    >
+      <h4 class="text-xl font-semibold font-heading mb-3">bleko</h4>
+      <p class="text-sm text-muted-foreground leading-relaxed">
+        Founder of bleko, a web design and digital systems agency helping South
+        African SMEs get serious about their digital presence — beyond templates,
+        into real infrastructure.
+      </p>
+    </div>
   </div>
 
-  <div class="my-10 py-10 max-w-4xl text-center mx-auto text-2xl">
-    <blockquote class="text-justify">
-      <span class="italic text-4xl">"</span>My work is grounded in a simple
-      belief: Africa deserves world class software. Not adapted versions of what
-      works elsewhere, products built intentionally for the realities of this
-      continent. That conviction shapes every project I take on.<span
-        class="italic text-4xl">"</span
-      >
+  <!-- Manifesto quote -->
+  <div class="my-16 md:my-24 py-10 max-w-3xl mx-auto" data-animate="fade-up">
+    <blockquote class="text-center text-xl md:text-2xl font-heading italic leading-relaxed text-foreground/90">
+      <span class="text-primary text-5xl leading-none align-top mr-1">"</span>
+      My work is grounded in a simple belief: Africa deserves world-class
+      software. Not adapted versions of what works elsewhere — products built
+      intentionally for the realities of this continent. That conviction shapes
+      every project I take on.
+      <span class="text-primary text-5xl leading-none align-bottom ml-1">"</span>
     </blockquote>
   </div>
-  <div></div>
 </section>
